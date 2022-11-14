@@ -44,7 +44,7 @@ defineProps({
                          
                         <tr v-for="(city ,index) in cities.data" :key="city.id" class="bg-white dark:bg-gray-800">
                             <th scope="row" class="py-2 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white border border-slate-300">
-                               {{city.id}}
+                               {{index+1}}
                             </th>
                             <td class="py-3 px-6 border border-slate-300">
                                {{city.city}}

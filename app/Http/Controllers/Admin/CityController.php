@@ -62,7 +62,7 @@ class CityController extends Controller
         
     }
 
-    public function destroy(Request $request, City $city)
+    public function destroy(City $city)
     {
          $city->delete();
          return Redirect::back()->with('message', 'City Delete SuccessfullY!.');

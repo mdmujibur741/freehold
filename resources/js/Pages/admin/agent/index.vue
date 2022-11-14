@@ -3,7 +3,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Link } from '@inertiajs/inertia-vue3';
 
 defineProps({
-    beds : Object
+    agents : Object
 })
 
 </script>
@@ -21,7 +21,7 @@ defineProps({
               </div>
 
             <div class="text-end px-8 ">
-                <Link :href="route('admin.bed.create')" class="text-white bg-blue-700 px-3 py-2 rounded-full">Add Bed</Link>
+                <Link :href="route('admin.agent.create')" class="text-white bg-blue-700 px-3 py-2 rounded-full">Add Agent</Link>
             </div>
 
             <div class="overflow-x-auto relative m-7">
@@ -33,8 +33,14 @@ defineProps({
                                Serial
                             </th>
                             <th scope="col" class="py-3 px-6 border border-slate-300">
-                           Bed
+                          Name
                             </th>
+                            <th scope="col" class="py-3 px-6 border border-slate-300">
+                              Title
+                                  </th>
+                                  <th scope="col" class="py-3 px-6 border border-slate-300">
+                                   Image
+                                        </th>
                             <th scope="col" class="py-3 px-6 border border-slate-300">
                                Action
                             </th>
@@ -42,17 +48,25 @@ defineProps({
                     </thead>
                     <tbody >
                          
-                        <tr v-for="(bed ,index) in beds.data" :key="bed.id" class="bg-white dark:bg-gray-800">
+                        <tr v-for="(agent ,index) in agents.data" :key="agent.id" class="bg-white dark:bg-gray-800">
                             <th scope="row" class="py-2 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white border border-slate-300">
                                {{index+1}}
                             </th>
                             <td class="py-3 px-6 border border-slate-300">
-                               {{bed.bed}}
+                               {{agent.name}}
                             </td>
                             <td class="py-3 px-6 border border-slate-300">
-                      <Link :href="route('admin.bed.edit',bed.id)" class="p-2 bg-blue-400 rounded-full text-white mx-2">Edit</Link>
-                     <Link :href="route('admin.bed.destroy',bed.id)" method="delete" as="button" type="button" onclick="return confirm('Are you sure you want to delete this item')" class="p-2 bg-blue-400 rounded-full text-white mx-2">Delete</Link>
-                            </td>
+                                {{agent.title}}
+                             </td>
+                             <td class="py-3 px-6 border border-slate-300">
+                               <img :src="agent.image" class="shadow-xxl rounded" alt="" style="width: 70px;">
+                             </td>
+                            <td class="py-3 px-6 border border-slate-300">
+
+                      <Link :href="route('admin.agent.edit', agent.id)" class="p-2 bg-blue-400 rounded-full text-white mx-2">Edit</Link>
+                       <Link :href="route('admin.agent.destroy', agent.id)" method="delete" as="button" type="button" onclick="return confirm('Are you sure you want to delete this item')" class="p-2 bg-blue-400 rounded-full text-white mx-2">Delete</Link> 
+                          
+                    </td>
                         
                         </tr>
                     </tbody>
@@ -60,7 +74,7 @@ defineProps({
                 </table>
 
                 <div class="bg-green p-3 text-center">
-                         <Link v-for="link in beds.meta.links" :href="link.url" v-html="link.label" class="py-2 px-3 ml-0 leading-tight text-gray-500 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 hover:text-black-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"  />
+                         <Link class="py-2 px-3 ml-0 leading-tight text-gray-500 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 hover:text-black-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" v-for="link in agents.meta.links" :href="link.url" v-html="link.label" />
                       
                 </div>
     

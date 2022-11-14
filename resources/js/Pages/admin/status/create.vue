@@ -7,7 +7,7 @@ import { useForm } from '@inertiajs/inertia-vue3';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 
 const form = useForm({
-    city: ''
+    status: ''
 })
 
 function cleanForm (){
@@ -15,7 +15,7 @@ function cleanForm (){
 }
 
 const submit = () => {
-    form.post(route('admin.city.store'),{
+    form.post(route('admin.status.store'),{
       onSuccess:() => cleanForm()
     })
 }
@@ -32,12 +32,12 @@ const submit = () => {
           {{ $page.props.flash.message }}
         </div>
         <div class="bg-teal-50 px-8 py-8">
-          <h3 class="text-center px-2 py-2 uppercase font-bold">Add City</h3>
+          <h3 class="text-center px-2 py-2 uppercase font-bold">Add Status</h3>
           <form @submit.prevent="submit">
           <div>
-            <InputLabel for="city" value="City"/>
-            <TextInput id="city" type="text" class="w-full mt-1 rounded-full " v-model="form.city" placeholder="Enter City Name"/>
-            <InputError class="mt-2 text-red" :message="form.errors.city" />
+            <InputLabel for="status" value="Status"/>
+            <TextInput id="status" type="text" class="w-full mt-1 rounded-full " v-model="form.status" placeholder="Enter Status"/>
+            <InputError class="mt-2 text-red" :message="form.errors.status" />
           </div>
           <div class="text-center">
             <PrimaryButton class="ml-4 mt-5" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
