@@ -24,29 +24,33 @@ const submit = () => {
 
 
 <template>
-    <div class="h-screen">
+    <div class="">
         <AuthenticatedLayout>
 
-      <div class="w-5/12 mx-auto mt-20 rounded-full shadow-lg">
-        <div v-if="$page.props.flash.message" class="bg-blue-300 py-4 alert text-center text-white-100" >
-          {{ $page.props.flash.message }}
-        </div>
-        <div class="bg-teal-50 px-8 py-8">
-          <h3 class="text-center px-2 py-2 uppercase font-bold">Add Status</h3>
-          <form @submit.prevent="submit">
-          <div>
-            <InputLabel for="status" value="Status"/>
-            <TextInput id="status" type="text" class="w-full mt-1 rounded-full " v-model="form.status" placeholder="Enter Status"/>
-            <InputError class="mt-2 text-red" :message="form.errors.status" />
-          </div>
-          <div class="text-center">
-            <PrimaryButton class="ml-4 mt-5" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-           Submit
-          </PrimaryButton>
-          </div>
-        
-          </form>
-        </div>
+      <div class="row">
+       <div class="card" style="background: #D9DDEE;">
+            <div class="card-body">
+              <div v-if="$page.props.flash.message" class="" >
+                {{ $page.props.flash.message }}
+              </div>
+            
+                <h3 class="text-center px-2 py-2 uppercase font-bold">Add Status</h3>
+                <form @submit.prevent="submit">
+                <div>
+                  <InputLabel for="status" value="Status"/>
+                  <TextInput id="status" type="text" class="w-full mt-1 rounded-full " v-model="form.status" placeholder="Enter Status"/>
+                  <InputError class="mt-2 text-red" :message="form.errors.status" />
+                </div>
+                <div class="text-center">
+                  <PrimaryButton class="ml-4 mt-5" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                 Submit
+                </PrimaryButton>
+                </div>
+              
+                </form>
+            </div>
+       </div>
+       
 
       </div>
 

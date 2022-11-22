@@ -1,18 +1,17 @@
 <script setup>
-import ApplicationLogo from '@/Components/ApplicationLogo.vue';
+
 import { Link } from '@inertiajs/inertia-vue3';
 </script>
 
 <template>
-    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-        <div>
-            <Link href="/">
-                <ApplicationLogo class="w-20 h-20 fill-current text-gray-500" />
-            </Link>
-        </div>
+    <div class="container">
+      
 
-        <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
-            <slot />
+        <div class="row justify-content-center mt-7">
+      <div class="col-sm-12 col-md-8 col-lg-5 bg-light p-4 rounded-3">
+        <h3 class="text-center">Real Estate</h3>
+        <slot />
+      </div>
         </div>
     </div>
 </template>

@@ -14,55 +14,59 @@ defineProps({
    
 
       <AuthenticatedLayout>
-         <div class="py-6">
+         <div class="row">
            
-            <div v-if="$page.props.flash.message" class="bg-blue-300 py-4 px-8 alert text-center text-white-100" >
-                {{ $page.props.flash.message }}
-              </div>
-
-            <div class="text-end px-8 ">
-                <Link :href="route('admin.status.create')" class="text-white bg-blue-700 px-3 py-2 rounded-full">Add Status</Link>
-            </div>
-
-            <div class="overflow-x-auto relative m-7">
-                      
-                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 rounded-lg border-collapse border border-slate-400">
-                    <thead class="text-xs text-gray-900 bg-red-300 uppercase dark:text-gray-400">
-                    <tr >
-                            <th scope="col" class="py-3 px-6 border border-slate-300">
-                               Serial
-                            </th>
-                            <th scope="col" class="py-3 px-6 border border-slate-300">
-                              City 
-                            </th>
-                            <th scope="col" class="py-3 px-6 border border-slate-300">
-                               Action
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody >
-                         
-                        <tr v-for="(status ,index) in statuses.data" :key="status.id" class="bg-white dark:bg-gray-800">
-                            <th scope="row" class="py-2 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white border border-slate-300">
-                               {{index+1}}
-                            </th>
-                            <td class="py-3 px-6 border border-slate-300">
-                               {{status.status}}
+          <div class="card">
+                 <div class="card-body">
+                    <div v-if="$page.props.flash.message" class="" >
+                        {{ $page.props.flash.message }}
+                      </div>
+        
+                    <div class="text-end px-8 ">
+                        <Link :href="route('admin.status.create')" class="btn btn-primary float-right">Add Status</Link>
+                    </div>
+        
+                    
+                              
+                        <table class="table table-bordered">
+                            <thead class="">
+                            <tr >
+                                    <th scope="col" >
+                                       Serial
+                                    </th>
+                                    <th scope="col" >
+                                      City 
+                                    </th>
+                                    <th scope="col" >
+                                       Action
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody >
+                                 
+                                <tr v-for="(status ,index) in statuses.data" :key="status.id" >
+                                    <th scope="row">
+                                       {{index+1}}
+                                    </th>
+                                    <td class="py-3 ">
+                                       {{status.status}}
+                                    </td>
+                                    <td class="py-3 ">
+        
+                               <Link :href="route('admin.status.edit', status.id)" class="btn btn-sm btn-primary p-2">Edit</Link>
+                               <Link :href="route('admin.status.destroy', status.id)" method="delete" as="button" type="button" onclick="return confirm('Are you sure you want to delete this item')" class="btn btn-sm btn-danger ms-1 p-2">Delete</Link>
+                                  
                             </td>
-                            <td class="py-3 px-6 border border-slate-300">
-
-                       <Link :href="route('admin.status.edit', status.id)" class="p-2 bg-blue-400 rounded-full text-white mx-2">Edit</Link>
-                       <Link :href="route('admin.status.destroy', status.id)" method="delete" as="button" type="button" onclick="return confirm('Are you sure you want to delete this item')" class="p-2 bg-blue-400 rounded-full text-white mx-2">Delete</Link>
-                          
-                    </td>
-                        
-                        </tr>
-                    </tbody>
-               
-                </table>
-    
-            </div>
+                                
+                                </tr>
+                            </tbody>
+                       
+                        </table>
             
+                   
+                    
+                 </div>
+          </div>
                            
          </div>
       </AuthenticatedLayout>
