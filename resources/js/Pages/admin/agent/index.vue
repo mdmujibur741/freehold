@@ -69,8 +69,8 @@ defineProps({
                          </td>
                         <td>
 
-                  <Link :href="route('admin.agent.edit', agent.id)" class="p-2 btn btn-sm btn-primary mx-1">Edit</Link>
-                   <Link :href="route('admin.agent.destroy', agent.id)" method="delete" as="button" type="button" onclick="return confirm('Are you sure you want to delete this item')" class="p-2 btn btn-sm btn-danger mx-1">Delete</Link> 
+                  <Link :href="route('admin.agent.edit', agent.id)" class="p-2 btn btn-sm btn-primary mx-1"> <i class="fs-6 fa-solid fa-pen-to-square"></i> </Link>
+                   <Link :href="route('admin.agent.destroy', agent.id)" method="delete" as="button" type="button" onclick="return confirm('Are you sure you want to delete this item')" class="p-2 btn btn-sm btn-danger mx-1"><i class="fs-6 text-white fa-solid fa-trash"></i> </Link> 
                       
                 </td>
                     

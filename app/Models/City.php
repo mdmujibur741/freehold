@@ -10,4 +10,10 @@ class City extends Model
     use HasFactory;
 
     protected $fillable = ['city','slug'];
+
+
+    public function property()
+    {
+         return $this->hasOne(Property::class, 'city_id');
+    }
 }

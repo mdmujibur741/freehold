@@ -28,7 +28,7 @@
                 <div class="col-lg-4 mb-lg-0 mb-4" v-for="latest in latests.data" :key="latest.id">
                     <div class="card">
                         <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
-                            <Link :href="route('web.property')" class="d-block">
+                            <Link :href="route('web.property',latest.slug)" class="d-block">
                                 <img :src="latest.imageOne" class="img-fluid border-radius-lg shadow">
                             </Link>
                         </div>
@@ -36,15 +36,15 @@
                         <div class="card-body pt-3">
                             <div class="d-flex align-items-center">
                                 <div>
-                                    <Link :href="route('web.property')" class="card-title h4 d-block text-darker font-weight-bolder mb-0">
-                                       {{latest.price}}
-                                    </Link>
+                                   <b> &#36; {{latest.price}}</b> 
                                     <p class="card-description mb-4 text-sm">
-                                      {{latest.city.city}}
+             
+                                        <Link :href="route('web.city',latest.city.slug)"> {{latest.city.city}}</Link>
+                                     
                                     </p>
                                 </div>
                                 <div class="ms-auto">
-                                    <Link :href="route('web.property')" class="btn btn-link text-dark p-0">
+                                    <Link :href="route('web.property',latest.slug)" class="btn btn-link text-dark p-0">
                                         View details
                                     </Link>
                                 </div>
@@ -96,7 +96,7 @@
                 <div v-for="sell in sells.data" :key="sell.id" class="col-lg-4 col-md-6 mb-lg-0 mb-4">
                     <div class="card mb-4">
                         <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
-                            <Link :href="route('web.property')" class="d-block">
+                            <Link :href="route('web.property', sell.slug)" class="d-block">
                                 <img :src="sell.imageOne" class="img-fluid border-radius-lg shadow" style="width:100%; height:210px !important;">
                             </Link>
                         </div>
@@ -104,15 +104,17 @@
                         <div class="card-body pt-3">
                             <div class="d-flex align-items-center">
                                 <div>
-                                    <Link :href="route('web.property')" class="card-title h4 d-block text-darker font-weight-bolder mb-0">
-                                      {{sell.price}}
-                                    </Link>
+                                   
+                                        <b> &#36; {{sell.price}}</b> 
+                                    
                                     <p class="card-description mb-4 text-sm">
+                                        <Link :href="route('web.city',sell.city.slug)" class="btn btn-link text-dark p-0">
                                         {{sell.city.city}}
+                                        </Link>
                                     </p>
                                 </div>
                                 <div class="ms-auto">
-                                    <Link :href="route('web.property')" class="btn btn-link text-dark p-0">
+                                    <Link :href="route('web.property',sell.slug)" class="btn btn-link text-dark p-0">
                                         View details
                                     </Link>
                                 </div>

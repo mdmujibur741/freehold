@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\AgentResource;
+use App\Http\Resources\CityResource;
 use App\Http\Resources\PropertyResource;
 use App\Models\Agent;
+use App\Models\City;
 use App\Models\Property;
 use App\Models\Status;
 use Illuminate\Http\Request;
@@ -24,17 +26,30 @@ class frontendController extends Controller
      public function properties()
      {
          $properties = PropertyResource::collection(Property::with('city','bed','shower','road','zipCode','agent','status')->paginate(6));
+        
         return Inertia::render('frontend/properties',compact('properties'));
      }
 
-     public function single()
+    //   City Ways Search
+     public function city($slug)
      {
-      return Inertia::render('frontend/single');
+         $city = City::where('slug', $slug)->first();
+         $properties = PropertyResource::collection(Property::with('city','bed','shower','road','zipCode','agent','status')->where('city_id', $city->id)->paginate(9));
+         return Inertia::render('frontend/city',compact('properties'));
+     }
+
+     public function single($slug)
+     {
+        $property = Property::where('slug',$slug)->with('city','bed','shower','road','zipCode','agent','status')->first();
+      return Inertia::render('frontend/single',compact('property'));
      }
 
      public function contact()
      {
          return Inertia::render('frontend/contact');
      }
+
+
+   
 
 }

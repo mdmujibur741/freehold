@@ -62,8 +62,8 @@ defineProps({
                      <td> {{item.agent.name}} </td>
                      <td> 
                           <div class="d-flex">
-                                <Link :href="route('admin.property.edit', item.id)" class="btn btn-sm btn-primary px-3"> Edit</Link>
-                               <Link :href="route('admin.property.destroy', item.id)" as="button" method="delete" class="btn btn-sm btn-danger px-3 ms-1">Delete</Link>
+                                <Link :href="route('admin.property.edit', item.id)" class="btn btn-sm btn-primary px-3"> <i class="fs-6 fa-solid fa-pen-to-square"></i> </Link>
+                               <Link :href="route('admin.property.destroy', item.id)" as="button" method="delete" class="btn btn-sm btn-danger px-3 ms-1"><i class="fs-6 text-white fa-solid fa-trash"></i></Link>
                               </div>   
                      </td>
                     </tr>

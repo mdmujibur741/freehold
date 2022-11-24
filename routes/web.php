@@ -33,8 +33,9 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
 // Frontend Route
 Route::get('/',[frontendController::class,'index'])->name('web.home');
 Route::get('/properties', [frontendController::class,'properties'])->name('web.properties');
-Route::get('/property', [frontendController::class,'single'])->name('web.property');
+Route::get('/property/{slug}', [frontendController::class,'single'])->name('web.property');
 Route::get('/contact', [frontendController::class,'contact'])->name('web.contact');
+Route::get('/city/{slug}', [frontendController::class,'city'])->name('web.city');
 
 
 

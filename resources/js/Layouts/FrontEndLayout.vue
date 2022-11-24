@@ -35,7 +35,15 @@
         </div>
     </nav>
 
-
+  <div class="search py-4 ">
+       <form>
+            <div class="row justify-content-center">
+               <div class="col-lg-8 col-md-10 col-sm-11 px-3">
+                <input type="text" class="form-control rounded-pill shadow-lg" placeholder="Enter Search City ">
+               </div>
+            </div>
+       </form>
+  </div>
 
 <main>
    <slot />
@@ -206,3 +214,12 @@
         import { Link } from '@inertiajs/inertia-vue3';
        
 </script>
+
+
+<style scoped>
+.search{
+             min-height: 8 vh;
+             background: rgb(94, 94, 224);
+             text-align: center;
+}
+</style>

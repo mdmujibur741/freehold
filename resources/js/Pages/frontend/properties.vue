@@ -12,7 +12,7 @@
                         <div v-for="property in properties.data" :key="property.id" class="col-lg-4 col-md-6 mb-lg-0 mb-4">
                             <div class="card mb-4">
                                 <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
-                                    <Link :href="route('web.property')" class="d-block text-center">
+                                    <Link :href="route('web.property',property.slug)" class="d-block text-center">
                                         <img :src="property.imageOne" class="img-fluid border-radius-lg shadow" style="width:316px; height:210px !important;">
                                     </Link>
                                 </div>
@@ -20,15 +20,15 @@
                                 <div class="card-body pt-3">
                                     <div class="d-flex align-items-center">
                                         <div>
-                                            <Link :href="route('web.property')" class="card-title h4 d-block text-darker font-weight-bolder mb-0">
+                                        
                                             <b>&#36;</b>  {{property.price}} 
-                                            </Link>
+                                           
                                             <p class="card-description mb-4 text-sm">
-                                                {{property.city.city}}
+                                              <Link :href="route('web.city',property.city.slug)">  {{property.city.city}}</Link>
                                             </p>
                                         </div>
                                         <div class="ms-auto">
-                                            <Link :href="route('web.property')" class="btn btn-link text-dark p-0">
+                                            <Link :href="route('web.property',property.slug)" class="btn btn-link text-dark p-0">
                                                 View details
                                             </Link>
                                         </div>
