@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\AgentRequest;
 use App\Http\Resources\AgentResource;
 use App\Models\Agent;
 use Illuminate\Http\Request;
@@ -11,7 +10,6 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 
-use function Termwind\render;
 
 class AgentController extends Controller
 {
@@ -26,8 +24,16 @@ class AgentController extends Controller
         return Inertia::render('admin/agent/create');
     }
 
-    public function store(AgentRequest $request)
+    public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|min:3',
+            'title' => 'required|min:5',
+            'description' => 'required',
+            'image' => 'required',
+            'facebook' => 'required',
+            'image' => 'required',
+        ]);
         if ($request->hasFile('image')) {
             $image = $request->file('image')->store('agent');
         }
@@ -52,17 +58,20 @@ class AgentController extends Controller
 
     public function update(Request $request, Agent $agent)
     {
-
+      
          $request->validate([
-                   'name' => 'required|min:3',
-                   'title' => 'required|min:10',
-                   'description' => 'required|min:15',
+                   'name' => 'required',
+                   'title' => 'required',
+                   'description' => 'required',
                    'facebook' => 'required|url',
          ]);
-
+   
+   
          $image = $agent->image;
          if($request->hasFile('image')){
-              Storage::delete($image);
+           if($agent->image ==!null){
+            Storage::delete($agent->image);
+           }
               $image = $request->file('image')->store('agent');
          }
 

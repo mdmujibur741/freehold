@@ -63,7 +63,7 @@ defineProps({
                      <td> 
                           <div class="d-flex">
                                 <Link :href="route('admin.property.edit', item.id)" class="btn btn-sm btn-primary px-3"> Edit</Link>
-                               <Link :href="route('admin.property.destroy', item.id)" as="button" method="post" class="btn btn-sm btn-danger px-3 ms-1">Delete</Link>
+                               <Link :href="route('admin.property.destroy', item.id)" as="button" method="delete" class="btn btn-sm btn-danger px-3 ms-1">Delete</Link>
                               </div>   
                      </td>
                     </tr>

@@ -112,11 +112,15 @@ class PropertyController extends Controller
          ]);
 
          if($request->hasFile('imageOne')){
-              Storage::delete($property->imageOne);
+            if($property->imageOne){
+                Storage::delete($property->imageOne);
+            }
               $imageOne = $request->file('imageOne')->store('property');
          }
          if($request->hasFile('imageTwo')){
+           if($property->imageTwo){
             Storage::delete($property->imageTwo);
+           }
             $imageTwo = $request->file('imageTwo')->store('property');
        }
 
@@ -142,7 +146,7 @@ class PropertyController extends Controller
 
     public function destroy(Property $property)
     {
-          Storage::delete($property->imageOne, $property->imageTwo);
+          Storage::delete([$property->imageOne, $property->imageTwo]);
           $property->delete();
           return Redirect::back();
     }
