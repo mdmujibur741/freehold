@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="overflow-hidden">
    
 
     <nav class="navbar navbar-expand-lg bg-transparent py-3 shadow-none">

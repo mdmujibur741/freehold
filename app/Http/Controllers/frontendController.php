@@ -40,6 +40,7 @@ class frontendController extends Controller
 
      public function single($slug)
      {
+        // return "done";
         $property = Property::where('slug',$slug)->with('city','bed','shower','road','zipCode','agent','status')->first();
       return Inertia::render('frontend/single',compact('property'));
      }

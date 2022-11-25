@@ -8,11 +8,11 @@
                         <div class="col-lg-7">
                             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-inner">
-                                  <div class="carousel-item active">
-                                    <img :src="'/storage/'+property.imageOne" class="d-block w-100 rounded" alt="..." style="height:400px !important;">
+                                  <div class="carousel-item active rounded-3">
+                                    <img :src="'/storage/'+property.imageOne" class="d-block w-100" alt="..." style="height:400px !important;">
                                   </div>
-                                  <div class="carousel-item">
-                                    <img :src="'/storage/'+property.imageTwo" class="d-block w-100 rounded" alt="..." style="height:400px !important;">
+                                  <div class="carousel-item rounded-3">
+                                    <img :src="'/storage/'+property.imageTwo" class="d-block w-100" alt="..." style="height:400px !important;">
                                   </div>
                                 </div>
                               </div>
