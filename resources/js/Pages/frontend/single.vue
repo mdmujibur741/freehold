@@ -19,7 +19,9 @@
                         </div>
                         <div class="col-lg-4">
                             <h2 class="heading text-primary">{{property.name}}</h2>
-                            <p class="meta"><b>{{property.city.city}}</b></p>
+                            <p class="meta"><b>City: {{property.city.city}} </b></p>
+                            <p class="meta"><b>Road: {{property.road.road}} </b></p>
+                            <p class="meta"><b>Zip Code: {{property.zip_code.zipCode}} </b></p>
                             <p class="text-black-50"> {{property.description}} </p>
                            
                             

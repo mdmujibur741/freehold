@@ -50,7 +50,7 @@ const submit = () => {
 
                 <div class="mb-2">
                   <InputLabel for="name" value="Name" />
-                  <TextInput id="name" type="text" class="w-full mt-1 rounded-full " v-model="form.name"
+                  <TextInput id="name" type="text" v-model="form.name"
                     placeholder="Enter Agent Name" />
                   <InputError class="mt-2 text-red" :message="form.errors.name" />
                 </div>
@@ -58,21 +58,21 @@ const submit = () => {
 
                 <div class="mb-2">
                   <InputLabel for="title" value="Title" />
-                  <TextInput id="title" type="text" class="w-full mt-1 rounded-full " v-model="form.title"
+                  <TextInput id="title" type="text" v-model="form.title"
                     placeholder="Enter Title" />
                   <InputError class="mt-2 text-red" :message="form.errors.title" />
                 </div>
 
                 <div class="mb-2">
                   <InputLabel for="facebook" value="Facebook Url" />
-                  <TextInput id="facebook" type="text" class="w-full mt-1 rounded-full" v-model="form.facebook"
+                  <TextInput id="facebook" type="text" v-model="form.facebook"
                     placeholder="Enter Facebook Url" />
-                  <InputError class="mt-2 text-red" :message="form.errors.facebook" />
+                  <InputError class="mt-2 " :message="form.errors.facebook" />
                 </div>
 
                 <div class="mb-2">
                   <InputLabel for="twitter" value="Twitter Url" />
-                  <TextInput id="twitter" type="text" class="w-full mt-1 rounded-full" v-model="form.twitter"
+                  <TextInput id="twitter" type="text" v-model="form.twitter"
                     placeholder="Enter Twitter Url" />
                   <InputError class="mt-2 text-red" :message="form.errors.twitter" />
                 </div>
@@ -80,15 +80,15 @@ const submit = () => {
 
                 <div class="mb-2">
                   <InputLabel for="linkedin" value="linkedin Url" />
-                  <TextInput id="linkedin" type="text" class="w-full mt-1 rounded-full" v-model="form.linkedin"
+                  <TextInput id="linkedin" type="text" v-model="form.linkedin"
                     placeholder="Enter linkedin Url" />
-                  <InputError class="mt-2 text-red" :message="form.errors.linkedin" />
+                  <InputError class="mt-2 " :message="form.errors.linkedin" />
                 </div>
 
 
                 <div class="mb-2">
                   <InputLabel for="instagram" value="Instagram Url" />
-                  <TextInput id="instagram" type="text" class="w-full mt-1 rounded-full" v-model="form.instagram"
+                  <TextInput id="instagram" type="text" v-model="form.instagram"
                     placeholder="Enter Instagram Url" />
                   <InputError class="mt-2 text-red" :message="form.errors.instagram" />
                 </div>
@@ -102,7 +102,7 @@ const submit = () => {
 
                 <div class="mb-2">
                   <InputLabel for="image" value="Image" />
-                  <TextInput id="image" type="file" class="form-control"
+                  <TextInput id="image" type="file"
                     v-model="form.image" @input="form.image = $event.target.files[0]" />
                   <InputError class="mt-2 text-danger" :message="form.errors.image" />
                 </div>

@@ -39,8 +39,8 @@ const submit = () => {
         <form @submit.prevent="submit">
         <div>
           <InputLabel for="city" value="City"/>
-          <TextInput id="city" type="text" class="form-control " v-model="form.city" placeholder="Enter City Name"/>
-          <InputError class="mt-2 text-red" :message="form.errors.city" />
+          <TextInput id="city" type="text" v-model="form.city" placeholder="Enter City Name"/>
+          <InputError class="mt-2" :message="form.errors.city" />
         </div>
         <div class="text-center">
           <PrimaryButton class="ml-4 mt-5" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">

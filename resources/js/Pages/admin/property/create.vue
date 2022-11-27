@@ -16,14 +16,14 @@
         
                                   <div class="mb-3">
                                     <InputLabel for="name" value="Name"/>
-                                    <TextInput id="name" type="text" class="w-full mt-1 rounded-full " v-model="form.name" placeholder="Enter Property Name"/>
-                                    <InputError class="mt-2 text-red" :message="form.errors.name" />
+                                    <TextInput id="name" type="text" v-model="form.name" placeholder="Enter Property Name"/>
+                                    <InputError class="mt-2 " :message="form.errors.name" />
                                   </div>
         
                                   <div class="mb-3">
                                     <InputLabel for="price" value="Price"/>
-                                    <TextInput id="price" type="number" class="w-full mt-1 rounded-full " v-model="form.price" placeholder="Enter Property Price"/>
-                                    <InputError class="mt-2 text-red" :message="form.errors.price" />
+                                    <TextInput id="price" type="number" v-model="form.price" placeholder="Enter Property Price"/>
+                                    <InputError class="mt-2 " :message="form.errors.price" />
                                   </div>
         
         
@@ -34,7 +34,7 @@
                                           <option value="" selected disabled>Choose Agent</option>
                                           <option v-for="agent in agents.data" :value="agent.id"> {{agent.name}} </option>
                                     </select>
-                                    <InputError class="mt-2 text-red" :message="form.errors.city_id" />
+                                    <InputError class="mt-2 " :message="form.errors.city_id" />
                                 </div>
         
                                 
@@ -44,7 +44,7 @@
                                         <option value="" selected disabled>Choose Status</option>
                                         <option v-for="status in statuses.data" :value="status.id"> {{status.status}} </option>
                                   </select>
-                                  <InputError class="mt-2 text-red" :message="form.errors.status_id" />
+                                  <InputError class="mt-2 " :message="form.errors.status_id" />
                               </div>
         
                                 <div class="mb-3">

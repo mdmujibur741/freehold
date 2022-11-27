@@ -31,7 +31,7 @@
 
               <div class="mb-3">
                 <InputLabel for="zipCode" value="Zip Code"/>
-                <TextInput id="zipCode" type="number" class="w-full mt-1 rounded-full " v-model="form.zipCode" placeholder="Enter Zip Code"/>
+                <TextInput id="zipCode" type="number" v-model="form.zipCode" placeholder="Enter Zip Code"/>
                 <InputError class="mt-2 text-red" :message="form.errors.zipCode" />
               </div>
               <div class="text-center">

@@ -51,7 +51,7 @@ const submit = () => {
         <AuthenticatedLayout>
 
       <div class="w-11/12 mx-auto my-20 rounded-full shadow-lg">
-        <div v-if="$page.props.flash.message" class="bg-blue-300 py-4 alert text-center text-white-100" >
+        <div v-if="$page.props.flash.message" class="py-4 alert text-center" >
           {{ $page.props.flash.message }}
         </div>
         <div class="bg-teal-50 px-8 py-8">
@@ -60,47 +60,47 @@ const submit = () => {
 
           <div class="mb-2">
             <InputLabel for="name" value="Name"/>
-            <TextInput id="name" type="text" class="w-full mt-1 rounded-full " v-model="form.name" placeholder="Enter Agent Name"/>
-            <InputError class="mt-2 text-red" :message="form.errors.name" />
+            <TextInput id="name" type="text" v-model="form.name" placeholder="Enter Agent Name"/>
+            <InputError class="mt-2" :message="form.errors.name" />
           </div>
 
 
           <div class="mb-2">
             <InputLabel for="title" value="Title"/>
-            <TextInput id="title" type="text" class="w-full mt-1 rounded-full " v-model="form.title" placeholder="Enter Title"/>
-            <InputError class="mt-2 text-danger" :message="form.errors.title" />
+            <TextInput id="title" type="text" v-model="form.title" placeholder="Enter Title"/>
+            <InputError class="mt-2 " :message="form.errors.title" />
           </div>
 
           <div class="mb-2">
             <InputLabel for="facebook" value="Facebook Url"/>
-            <TextInput id="facebook" type="text" class="w-full mt-1 rounded-full" v-model="form.facebook" placeholder="Enter Facebook Url"/>
-            <InputError class="mt-2 text-danger" :message="form.errors.facebook" />
+            <TextInput id="facebook" type="text" v-model="form.facebook" placeholder="Enter Facebook Url"/>
+            <InputError class="mt-2 " :message="form.errors.facebook" />
           </div>
 
           <div class="mb-2">
             <InputLabel for="twitter" value="Twitter Url"/>
-            <TextInput id="twitter" type="text" class="w-full mt-1 rounded-full" v-model="form.twitter" placeholder="Enter Twitter Url"/>
-            <InputError class="mt-2 text-danger" :message="form.errors.twitter" />
+            <TextInput id="twitter" type="text" v-model="form.twitter" placeholder="Enter Twitter Url"/>
+            <InputError class="mt-2 " :message="form.errors.twitter" />
           </div>
 
 
           <div class="mb-2">
             <InputLabel for="linkedin" value="linkedin Url"/>
-            <TextInput id="linkedin" type="text" class="w-full mt-1 rounded-full" v-model="form.linkedin" placeholder="Enter linkedin Url"/>
-            <InputError class="mt-2 text-danger" :message="form.errors.linkedin" />
+            <TextInput id="linkedin" type="text" v-model="form.linkedin" placeholder="Enter linkedin Url"/>
+            <InputError class="mt-2 " :message="form.errors.linkedin" />
           </div>
 
 
           <div class="mb-2">
             <InputLabel for="instagram" value="Instagram Url"/>
-            <TextInput id="instagram" type="text" class="w-full mt-1 rounded-full" v-model="form.instagram" placeholder="Enter Instagram Url"/>
-            <InputError class="mt-2 text-danger" :message="form.errors.instagram" />
+            <TextInput id="instagram" type="text" v-model="form.instagram" placeholder="Enter Instagram Url"/>
+            <InputError class="mt-2 " :message="form.errors.instagram" />
           </div>
 
           <div class="mb-2">
             <InputLabel for="description" value="Description"/>
-             <textarea id="description" rows="2" v-model="form.description" class="w-full rounded-lg my-2 focus:outline-none"></textarea>
-            <InputError class="mt-2 text-danger" :message="form.errors.description" />
+             <textarea id="description" rows="2" v-model="form.description" class="form-control rounded-lg my-2 focus:outline-none"></textarea>
+            <InputError class="mt-2 " :message="form.errors.description" />
           </div>
 
           <div class="mb-2">

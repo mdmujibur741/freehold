@@ -17,7 +17,7 @@
 
                 <div class="mb-3">
                   <InputLabel for="road" value="Road"/>
-                  <TextInput id="road" type="text" class="w-full mt-1 rounded-full " v-model="form.road" placeholder="Enter Road Name"/>
+                  <TextInput id="road" type="text" v-model="form.road" placeholder="Enter Road Name"/>
                   <InputError class="mt-2 text-red" :message="form.errors.road" />
                 </div>
                 <div class="text-center">

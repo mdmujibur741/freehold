@@ -38,7 +38,7 @@ const submit = () => {
                 <form @submit.prevent="submit">
                 <div>
                   <InputLabel for="status" value="Status"/>
-                  <TextInput id="status" type="text" class="w-full mt-1 rounded-full " v-model="form.status" placeholder="Enter Status"/>
+                  <TextInput id="status" type="text" v-model="form.status" placeholder="Enter Status"/>
                   <InputError class="mt-2 text-red" :message="form.errors.status" />
                 </div>
                 <div class="text-center">

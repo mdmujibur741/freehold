@@ -39,7 +39,7 @@ const submit = () => {
           <form @submit.prevent="submit">
           <div>
             <InputLabel for="shower" value="Shower"/>
-            <TextInput id="shower" type="number" class="w-full mt-1 rounded-full " v-model="form.shower" placeholder="Enter Shower Number"/>
+            <TextInput id="shower" type="number" v-model="form.shower" placeholder="Enter Shower Number"/>
             <InputError class="mt-2 text-red" :message="form.errors.shower" />
           </div>
           <div class="text-center">

@@ -2,7 +2,7 @@
  <div>
    <FrontEndLayout>
     <header class="">
-        <div class="page-header min-vh-50 m-3 p-4 border-radius-xl py-9" style="background-image: url(https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2075&amp;q=80);">
+        <div class="page-header min-vh-50 m-3 p-4 border-radius-xl py-9" style="background-image: url(asset('/storage/property/r4kHwZwwGFwyhZdWmOmM4TSeezy4bYUKjA76mWdj.jpg'));">
             <span class="mask bg-gradient-dark opacity-7"></span>
             <div class="container h-100">
                 <div class="row">
@@ -172,7 +172,7 @@
                     <div class="card card-blog card-plain">
                         <div class="position-relative">
                             <a class="d-block blur-shadow-image text-center">
-                                <img src="https://image.shutterstock.com/image-photo/image-happy-brunette-man-wearing-260nw-1489874846.jpg" alt="img-blur-shadow" class="img-fluid shadow rounded-circle" style="width:120px; height:120px !important">
+                                <img :src="agent.image" alt="img-blur-shadow" class="img-fluid shadow rounded-circle" style="width:120px; height:120px !important">
                             </a>
                         </div>
                         <div class="card-body px-1 pt-3">

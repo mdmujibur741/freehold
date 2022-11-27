@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row mb-4">
                 <div class="col-12 text-center">
-                    <!-- <h3 class="mb-5" spellcheck="false">#{{city.city}}</h3> -->
+                    <h3 class="mb-5" spellcheck="false">#{{city.city}}</h3>
                 </div>
 
                 <div v-for="property in properties.data" :key="property.id" class="col-lg-4 col-md-6 mb-lg-0 mb-4">
@@ -98,6 +98,7 @@
      import FrontEndLayout from '@/Layouts/FrontEndLayout.vue';
      import { Link } from '@inertiajs/inertia-vue3';
      defineProps({
-        properties: Object,        
+        properties: Object,      
+        city: Array  
      })
 </script>

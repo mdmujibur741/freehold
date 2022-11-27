@@ -3,7 +3,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Link } from '@inertiajs/inertia-vue3';
 
 defineProps({
-    agents : Object
+    agents : Object,
 })
 
 </script>

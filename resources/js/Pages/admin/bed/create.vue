@@ -28,7 +28,7 @@ const submit = () => {
         <AuthenticatedLayout>
 
       <div class="w-5/12 mx-auto mt-20 rounded-full shadow-lg">
-        <div v-if="$page.props.flash.message" class="bg-blue-300 py-4 alert text-center text-white-100" >
+        <div v-if="$page.props.flash.message" class="py-4 alert text-center" >
           {{ $page.props.flash.message }}
         </div>
         <div class="bg-teal-50 px-8 py-8">
@@ -36,8 +36,8 @@ const submit = () => {
           <form @submit.prevent="submit">
           <div>
             <InputLabel for="bed" value="Bed"/>
-            <TextInput id="bed" type="number" class="w-full mt-1 rounded-full " v-model="form.bed" placeholder="Enter Bed Number"/>
-            <InputError class="mt-2 text-red" :message="form.errors.bed" />
+            <TextInput id="bed" type="number" v-model="form.bed" placeholder="Enter Bed Number"/>
+            <InputError class="mt-2" :message="form.errors.bed" />
           </div>
           <div class="text-center">
             <PrimaryButton class="ml-4 mt-5" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">

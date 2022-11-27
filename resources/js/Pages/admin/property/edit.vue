@@ -16,13 +16,13 @@
 
                 <div class="mb-3">
                   <InputLabel for="name" value="Name"/>
-                  <TextInput id="name" type="text" class="w-full mt-1 rounded-full " v-model="form.name" placeholder="Enter Property Name"/>
+                  <TextInput id="name" type="text" v-model="form.name" placeholder="Enter Property Name"/>
                   <InputError class="mt-2 text-red" :message="form.errors.name" />
                 </div>
 
                 <div class="mb-3">
                   <InputLabel for="price" value="Price"/>
-                  <TextInput id="price" type="number" class="w-full mt-1 rounded-full " v-model="form.price" placeholder="Enter Property Price"/>
+                  <TextInput id="price" type="number" v-model="form.price" placeholder="Enter Property Price"/>
                   <InputError class="mt-2 text-red" :message="form.errors.price" />
                 </div>
 
